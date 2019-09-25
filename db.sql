@@ -58,15 +58,36 @@ insert into ROOM values (9, '5B04', 3);
 
 select * from ROOM;
 
-DROP TABLE ADMITTED_IN CASCADE CONSTRAINTS;
-CREATE TABLE ADMITTED_IN (
-    PatientId int, 
-    RoomId int, 
-    /* HosId int, */ 
-    PRIMARY KEY(PatientId, RoomId),
+
+DROP TABLE DOCTOR CASCADE CONSTRAINTS;
+CREATE TABLE DOCTOR(
+    DocId int, 
+    Name varchar2(20), 
+    Qualification varchar2(10),
+    Salary number(7),
+    Address varchar2(30),
+    ContactNo varchar2(11),
+    PRIMARY KEY(DocId)
+);
+/* MBBS, FCPS, MCPS, MRCP */
+/* insert into DOCTOR values (DocId, Name, Qualification, Salary, Address, ContactNo); */
+insert into DOCTOR values (1, 'Suprova Shyama', 'FCPS', 150000, 'Puran Dhaka', '1234');
+insert into DOCTOR values (2, 'Ikra', 'MBBS', 100000, 'Uttara', '3245');
+insert into DOCTOR values (3, 'Dhruba', 'MCPS', 120000, 'Malibag', '3525');
+
+DROP TABLE MEDICAL_RECORD
+CASCADE CONSTRAINTS;
+CREATE TABLE MEDICAL_RECORD (
+    RecordId int,
+    PatientId int,
+    DocId int,
+    RoomId int,
+    /* HosId int, */
+    PRIMARY KEY(RecordId),
     FOREIGN KEY(RoomId) REFERENCES ROOM(RoomId),
     /* FOREIGN KEY(HosId) REFERENCES HOSPITAL(HosId), */
-    FOREIGN KEY(PatientId) REFERENCES PATIENT(PatientId)
+    FOREIGN KEY(PatientId) REFERENCES PATIENT(PatientId),
+    FOREIGN KEY(DocId) REFERENCES DOCTOR(DocId)
 );
 
 /* 1 --> 'Dipta Das' */
@@ -74,10 +95,11 @@ CREATE TABLE ADMITTED_IN (
 /* 3 --> 'Syed Sanzam' */
 /* 4 --> 'Sabit' */
 
-/* insert into ADMITTED_IN values (PatientId, RoomId); */
-insert into ADMITTED_IN values (1, 2);
-insert into ADMITTED_IN values (2, 5);
-insert into ADMITTED_IN values (3, 9);
+/* insert into MEDICAL_RECORD values (RecordId, PatientId, DocId, RoomId); */
 
-select * from ADMITTED_IN;
+insert into MEDICAL_RECORD values (1, 1, 1, 2);
+insert into MEDICAL_RECORD values (2, 2, 2, 5);
+insert into MEDICAL_RECORD values (3, 3, 1, 9);
+
+select * from MEDICAL_RECORD;
 
