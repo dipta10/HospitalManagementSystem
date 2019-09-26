@@ -1,16 +1,31 @@
 set serveroutput on; 
 
 declare 
-    docId MEDICAL_RECORD.docId%TYPE;
-    patientId MEDICAL_RECORD.patientId%TYPE;
-	
+    id_ PATIENT.PatientId%TYPE;
+    name_ PATIENT.name%TYPE;
+    gender_ PATIENT.gender%TYPE;
+    address_ PATIENT.Address%TYPE;
+    contactno_ PATIENT.ContactNo%TYPE;
+    age_ PATIENT.age%TYPE;
+
 begin 
-    patientId := 3;
-	docId := findDoctorForPatient(patientId);
-
-	dbms_output.put_line('patientId: ' || patientId || ' docid: ' || docId);
 
 
+    id_ := &id;
+    name_ := &name;
+    gender_ := &gender;
+    address_ := &address;
+    contactno_ := &contactno;
+    age_ := &age;
+
+    addPatientFromInput(
+        id_,
+        name_,
+        gender_ ,
+        address_,
+        contactno_ ,
+        age_
+    );
 end; 
 /
 

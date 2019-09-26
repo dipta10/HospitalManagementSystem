@@ -15,6 +15,6 @@ begin
     select docId into docId_ from MEDICAL_RECORD where patientId_ = patientId;
     return docId_;
 
-end;
+end findDoctorForPatient;
 /
 
