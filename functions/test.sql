@@ -1,7 +1,6 @@
 set serveroutput on; 
 
 declare 
-    id_ PATIENT.PatientId%TYPE;
     name_ PATIENT.name%TYPE;
     gender_ PATIENT.gender%TYPE;
     address_ PATIENT.Address%TYPE;
@@ -10,8 +9,6 @@ declare
 
 begin 
 
-
-    id_ := &id;
     name_ := &name;
     gender_ := &gender;
     address_ := &address;
@@ -19,13 +16,13 @@ begin
     age_ := &age;
 
     addPatientFromInput(
-        id_,
         name_,
         gender_ ,
         address_,
         contactno_ ,
         age_
     );
+
 end; 
 /
 
