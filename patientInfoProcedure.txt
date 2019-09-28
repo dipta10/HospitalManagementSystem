@@ -9,21 +9,16 @@ create or replace procedure patientInfo(p_id in out number)
     p_age PATIENT.age%TYPE;
     doc_name DOCTOR.Name%TYPE;
     hospital_name HOSPITAL.hosName%TYPE;
-    ptm_id MEDICAL_RECORD.PatientId%TYPE;
-
-    cursor hello is
-    select PatientId from MEDICAL_RECORD;
+    ptm_id MEDICAL_RECORD.PatientId%TYPE:=0;
     
+    begin
 
-	begin
-   
-          open hello;
-
-               loop
-
-                fetch hello into ptm_id;
+    select PatientId into ptm_id from MEDICAL_RECORD where PatientId=p_id;
+    
+    
+	
                 
-                if ptm_id=p_id then 
+                if ptm_id=p_id then
 
                 select PatientId,name,gender,Address,ContactNo,age into
                 pt_id,p_name,p_gender,p_address,p_contactno,p_age
@@ -49,18 +44,12 @@ create or replace procedure patientInfo(p_id in out number)
                 dbms_output.put_line('Doctor Name= '||doc_name);
                 dbms_output.put_line('Previous Medical Record= Yes');
 
-                exit when ptm_id=p_id;
-
+          end if;
             
-               end if;
-              end loop;
-           
-           close hello;
 
+               if ptm_id!=p_id   then           
 
-
-
-               /* select PatientId,name,gender,Address,ContactNo,age into
+                select PatientId,name,gender,Address,ContactNo,age into
                 pt_id,p_name,p_gender,p_address,p_contactno,p_age
                 from PATIENT
                 where PatientId=p_id;
@@ -72,10 +61,10 @@ create or replace procedure patientInfo(p_id in out number)
                 dbms_output.put_line('Patient Address= '||p_address);
                 dbms_output.put_line('Patient Contact No= '||p_contactno);
                 dbms_output.put_line('Patient Age= '||p_age);
-                exit when ptm_id!=p_id;
-                */
+                dbms_output.put_line('Previous Medical Record= No');
+                
 
-
+       end if;
   
      
 	end patientInfo;
