@@ -8,9 +8,7 @@ declare
     temp int;
 begin
     
-    showAvailableRoomsForHos(2);
-
-
+    showTotalPatientUnderDoc(3);
     -- dbms_output.put_line('1. add patient');
 
 end;

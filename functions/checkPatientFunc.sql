@@ -1,4 +1,6 @@
 -- dipta10
+-- helper function
+-- working
 
 create or replace function checkPatient(
     PatientId_ PATIENT.PatientId%TYPE

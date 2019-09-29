@@ -113,3 +113,5 @@ insert into MEDICAL_RECORD values (5, 5, 2, 1, '27-sep-2019', 0);
 
 select * from MEDICAL_RECORD;
 
+-- insert into medical_record values (6, 1, 1, 1, (select sysdate from dual), 1);
+

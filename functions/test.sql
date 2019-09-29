@@ -30,6 +30,15 @@ begin
     elsif x = 3 then
         dbms_output.put_line('Showing total patient under doctor');
         showTotalPatientUnderDoc(1);
+    elsif x = 4 then
+        dbms_output.put_line('Showing info about patient');
+        showPatientHosRoomNoProc(1);
+    elsif x = 5 then
+        dbms_output.put_line('Showing Available rooms');
+        showAvailableRoomsProc();
+    elsif x = 6 then
+        dbms_output.put_line('Showing Available rooms given hospital id');
+        showAvailableRoomsForHos(1);
     else
         dbms_output.put_line('Input not correct');
     end if;
