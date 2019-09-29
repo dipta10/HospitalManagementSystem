@@ -1,20 +1,10 @@
-set serveroutput on; 
-
-declare 
-    name_ PATIENT.name%TYPE;
-    gender_ PATIENT.gender%TYPE;
-    address_ PATIENT.Address%TYPE;
-    contactno_ PATIENT.ContactNo%TYPE;
-    age_ PATIENT.age%TYPE;
-
-begin 
-    
     dbms_output.put_line('Enter information for patient:');
-    name_ := &name;
-    gender_ := &gender;
-    address_ := &address;
-    contactno_ := &contactno;
-    age_ := &age;
+
+    name_ := 'test';
+    gender_ := 'Female';
+    address_ := 'test';
+    contactno_ := '123';
+    age_ := 99;
 
     addPatientFromInput(
         name_,
@@ -23,8 +13,3 @@ begin
         contactno_ ,
         age_
     );
-
-
-end; 
-/
-

@@ -17,7 +17,7 @@ begin
 
     if x = 1 then
         dbms_output.put_line('CALLING FUNCTION');
-        @@addPatientFromInputCall2.sql;
+        @@addPatientFromInputCall.sql;
     else
         dbms_output.put_line('Input not correct');
     end if;

@@ -2,19 +2,19 @@ DROP TABLE PATIENT CASCADE CONSTRAINTS;
 CREATE TABLE PATIENT(
     PatientId int, 
     Name varchar2(15), 
-    gender VARCHAR(9),
+    gender VARCHAR(7),
     Address varchar2(20),
     ContactNo varchar2(11),
-    Age int, 
+    Age number(3), 
     PRIMARY KEY(PatientId),
     check(gender in ('Male', 'Female', 'Unknown'))
 );
 
 /* insert into PATIENT values(id, 'name', 'gender', 'add', 'contactno', age); */
-insert into PATIENT values (1, 'Dipta Das', 'Male', 'Niketon' ,'01234567', 23);
-insert into PATIENT values (2, 'Nabil Sifat', 'Male', 'Tejgaon', '01797201337', 27);
-insert into PATIENT values (3, 'Syed Sanzam', 'Male', 'Uttara', '01777258585', 29);
-insert into PATIENT values (4, 'Sabit', 'Male', 'Niketon', '0174324', 50);
+insert into PATIENT values (1, 'Dipta Das', 'Male', 'Niketon' ,'0123', 23);
+insert into PATIENT values (2, 'Nabil Sifat', 'Male', 'Tejgaon', '0179', 27);
+insert into PATIENT values (3, 'Syed Sanzam', 'Male', 'Uttara', '0177', 29);
+insert into PATIENT values (4, 'Sabit', 'Unknown', 'Niketon', '0174', 50);
 select * from PATIENT;
 
 
@@ -84,6 +84,8 @@ CREATE TABLE MEDICAL_RECORD (
     PatientId int,
     DocId int,
     RoomId int,
+    dateOfAdmission date,
+    /* dateOfExamination date, */
     /* HosId int, */
     PRIMARY KEY(RecordId),
     FOREIGN KEY(RoomId) REFERENCES ROOM(RoomId),
@@ -99,9 +101,10 @@ CREATE TABLE MEDICAL_RECORD (
 
 /* insert into MEDICAL_RECORD values (RecordId, PatientId, DocId, RoomId); */
 
-insert into MEDICAL_RECORD values (1, 1, 1, 2);
-insert into MEDICAL_RECORD values (2, 2, 2, 5);
-insert into MEDICAL_RECORD values (3, 3, 1, 9);
+insert into MEDICAL_RECORD values (1, 1, 1, 2, '31-may-2017');
+insert into MEDICAL_RECORD values (2, 2, 2, 5, '30-april-2019');
+insert into MEDICAL_RECORD values (3, 3, 1, 9, '31-jan-2019');
+insert into MEDICAL_RECORD values (4, 1, 1, 2, '29-Jan-2017');
 
 select * from MEDICAL_RECORD;
 
