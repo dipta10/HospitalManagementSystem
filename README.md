@@ -5,6 +5,8 @@
 
 TODO:
 - Create procedures
+    - ShowPatientInfo(PatientId): prints all info along with prevous records
 - Doctor to Patient Relation using Record Table
+- Add add in the Record table
 
 

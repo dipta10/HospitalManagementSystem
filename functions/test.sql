@@ -1,6 +1,12 @@
 set serveroutput on; 
 
+SET VERIFY OFF;
+ACCEPT x NUMBER PROMPT 'Enter Option: ';
+
 declare 
+    x number := &x;
+
+    -- Patient Insertion Info
     name_ PATIENT.name%TYPE;
     gender_ PATIENT.gender%TYPE;
     address_ PATIENT.Address%TYPE;
@@ -9,19 +15,13 @@ declare
 
 begin 
 
-    name_ := &name;
-    gender_ := &gender;
-    address_ := &address;
-    contactno_ := &contactno;
-    age_ := &age;
+    if x = 1 then
+        dbms_output.put_line('CALLING FUNCTION');
+        @@addPatientFromInputCall2.sql;
+    else
+        dbms_output.put_line('Input not correct');
+    end if;
 
-    addPatientFromInput(
-        name_,
-        gender_ ,
-        address_,
-        contactno_ ,
-        age_
-    );
 
 end; 
 /
