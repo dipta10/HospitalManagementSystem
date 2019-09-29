@@ -1,15 +1,13 @@
 set serveroutput on;
 
 declare
-n Patient.PatientId%TYPE;
-
-
-
+    n Patient.PatientId%TYPE;
+    id int;
 begin
 
-n := &enter_value;
+    id := 1;
 
-showPatientHosRoomNo(n);
+    showTotalPatientUnderDoc(id);
 
 end;
 /

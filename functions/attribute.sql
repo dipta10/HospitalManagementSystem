@@ -29,8 +29,9 @@
     contactNo_ DOCTOR.ContactNo%TYPE;         
 
 
-/* DOCTOR TABLE */
+/* MEDICAL RECORD TABLE */
     recordId_ DOCTOR.RecordId%TYPE;           
     patientId_ DOCTOR.PatientId%TYPE;                  
     docId_ DOCTOR.DocId%TYPE;               
     roomId_ DOCTOR.RoomId%TYPE;   
+    2 dates
