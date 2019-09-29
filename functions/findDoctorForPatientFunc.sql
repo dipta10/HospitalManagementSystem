@@ -1,3 +1,5 @@
+-- broti
+
 create or replace function findDoctorForPatient(patientId_ in MEDICAL_RECORD.PatientId%TYPE)
 	return MEDICAL_RECORD.docId%TYPE
 	is
@@ -13,6 +15,7 @@ begin
     end if;
 
     select docId into docId_ from MEDICAL_RECORD where patientId_ = patientId;
+
     return docId_;
 
 end findDoctorForPatient;

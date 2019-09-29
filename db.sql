@@ -85,8 +85,10 @@ CREATE TABLE MEDICAL_RECORD (
     DocId int,
     RoomId int,
     dateOfAdmission date,
+    discharged number(1),
     /* dateOfExamination date, */
     /* HosId int, */
+    check(discharged in (0, 1)),
     PRIMARY KEY(RecordId),
     FOREIGN KEY(RoomId) REFERENCES ROOM(RoomId),
     /* FOREIGN KEY(HosId) REFERENCES HOSPITAL(HosId), */
@@ -101,10 +103,10 @@ CREATE TABLE MEDICAL_RECORD (
 
 /* insert into MEDICAL_RECORD values (RecordId, PatientId, DocId, RoomId); */
 
-insert into MEDICAL_RECORD values (1, 1, 1, 2, '31-may-2017');
-insert into MEDICAL_RECORD values (2, 2, 2, 5, '30-april-2019');
-insert into MEDICAL_RECORD values (3, 3, 1, 9, '31-jan-2019');
-insert into MEDICAL_RECORD values (4, 1, 1, 2, '29-Jan-2017');
+insert into MEDICAL_RECORD values (1, 1, 1, 2, '31-may-2017', 1);
+insert into MEDICAL_RECORD values (2, 2, 2, 5, '25-sep-2019', 1);
+insert into MEDICAL_RECORD values (3, 3, 1, 9, '31-jan-2019', 1);
+insert into MEDICAL_RECORD values (4, 1, 1, 2, '27-sep-2019', 0);
 
 select * from MEDICAL_RECORD;
 
