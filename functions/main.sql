@@ -5,10 +5,8 @@ declare
     id int;
     found MEDICAL_RECORD.docId%TYPE;
 begin
-
-    id := 1;
-
-    found := findDoctorForPatient(id);
+    
+    showPatientHosRoomNoProc(4);
 
     -- dbms_output.put_line('1. add patient');
 
