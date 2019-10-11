@@ -11,12 +11,17 @@ CREATE TABLE PATIENT(
 );
 
 /* insert into PATIENT values(id, 'name', 'gender', 'add', 'contactno', age); */
-insert into PATIENT values (1, 'Dipta Das', 'Male', 'Niketon' ,'0123', 23);
-insert into PATIENT values (2, 'Nabil Sifat', 'Male', 'Tejgaon', '0179', 27);
-insert into PATIENT values (3, 'Syed Sanzam', 'Male', 'Uttara', '0177', 29);
-insert into PATIENT values (4, 'Sabit', 'Unknown', 'Niketon', '0174', 50);
-select * from PATIENT;
+/* insert into PATIENT values (1, 'Dipta Das', 'Male', 'Niketon' ,'0123', 23); */
+/* insert into PATIENT values (2, 'Nabil Sifat', 'Male', 'Tejgaon', '0179', 27); */
+/* insert into PATIENT values (3, 'Syed Sanzam', 'Male', 'Uttara', '0177', 29); */
+/* insert into PATIENT values (4, 'Sabit', 'Unknown', 'Niketon', '0174', 50); */
+/* insert into PATIENT values (5, 'Broti', 'Female', 'Uttara', '0174', 23); */
+/* insert into PATIENT values (6, 'Tonmoy', 'Male', 'Farmgate', '0174', 23); */
 
+insert into PATIENT values (7, 'Shaon', 'Male', 'Niketon', '0174', 49);
+insert into PATIENT values (8, 'Eimo', 'Male', 'Niketon', '0174', 49);
+
+select * from PATIENT;
 
 DROP TABLE HOSPITAL CASCADE CONSTRAINTS;
 CREATE TABLE HOSPITAL (
@@ -85,8 +90,10 @@ CREATE TABLE MEDICAL_RECORD (
     DocId int,
     RoomId int,
     dateOfAdmission date,
+    discharged number(1),
     /* dateOfExamination date, */
     /* HosId int, */
+    check(discharged in (0, 1)),
     PRIMARY KEY(RecordId),
     FOREIGN KEY(RoomId) REFERENCES ROOM(RoomId),
     /* FOREIGN KEY(HosId) REFERENCES HOSPITAL(HosId), */
@@ -101,10 +108,14 @@ CREATE TABLE MEDICAL_RECORD (
 
 /* insert into MEDICAL_RECORD values (RecordId, PatientId, DocId, RoomId); */
 
-insert into MEDICAL_RECORD values (1, 1, 1, 2, '31-may-2017');
-insert into MEDICAL_RECORD values (2, 2, 2, 5, '30-april-2019');
-insert into MEDICAL_RECORD values (3, 3, 1, 9, '31-jan-2019');
-insert into MEDICAL_RECORD values (4, 1, 1, 2, '29-Jan-2017');
+/* insert into MEDICAL_RECORD values (1, 1, 1, 2, '31-may-2017', 1); */
+/* insert into MEDICAL_RECORD values (2, 2, 2, 5, '25-sep-2019', 1); */
+/* insert into MEDICAL_RECORD values (3, 3, 1, 9, '31-jan-2019', 1); */
+/* insert into MEDICAL_RECORD values (4, 1, 1, 2, '27-sep-2019', 0); */
+/* insert into MEDICAL_RECORD values (5, 5, 2, 1, '27-sep-2019', 0); */
+insert into MEDICAL_RECORD values (6, 7, 2, 5, '27-sep-2019', 0);
 
 select * from MEDICAL_RECORD;
+
+-- insert into medical_record values (6, 1, 1, 1, (select sysdate from dual), 1);
 

@@ -1,5 +1,6 @@
 -- dipta
 -- working
+-- checks other sites
 
 create or replace procedure showAvailableRoomsForHos(
     hosId_ in HOSPITAL.hosId%TYPE
@@ -7,6 +8,7 @@ create or replace procedure showAvailableRoomsForHos(
     is
 
     found int := 0;
+    hospitalFound int;
 
     roomId_ ROOM.RoomId%TYPE;
     roomNo_ ROOM.RoomNo%TYPE;
@@ -19,9 +21,22 @@ create or replace procedure showAvailableRoomsForHos(
         select roomId
         from medical_record
         where discharged = 0
-    ) and room.hosId = hospital.hosId and HOSPITAL.hosId = hosId_;
+    )
+    and RoomId not in (
+        select roomId
+        from medical_record@broti
+        where discharged = 0
+    )
+    and room.hosId = hospital.hosId and HOSPITAL.hosId = hosId_;
 
 begin
+
+    hospitalFound := checkHospital(hosId_);
+
+    if hospitalFound = 0 then
+        dbms_output.put_line('no hospital found with id: ' || hosId_);
+        return;
+    end if;
 
     open c1;
         loop

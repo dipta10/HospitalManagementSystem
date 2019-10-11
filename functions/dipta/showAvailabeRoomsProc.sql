@@ -1,5 +1,6 @@
 -- dipta
 -- working
+-- checks the other site
 
 create or replace procedure showAvailableRoomsProc
     is
@@ -18,7 +19,13 @@ create or replace procedure showAvailableRoomsProc
         select roomId
         from medical_record
         where discharged = 0
-    ) and room.hosId = hospital.hosId;
+    ) 
+    and RoomId not in (
+        select roomId
+        from medical_record@broti
+        where discharged = 0
+    ) 
+    and room.hosId = hospital.hosId;
 
 begin
 
@@ -26,7 +33,7 @@ begin
         loop
             fetch  c1 into roomId_, roomNo_, hosId_, hosName_;
             exit when c1%notfound;
-            dbms_output.put_line(roomId_ || ' ' || roomNo_ || ' ' || hosId_ || ' ' || hosName_);
+            dbms_output.put_line('RoomId: ' || roomId_ || ' RoomNo: ' || roomNo_ || ' HosId: ' || hosId_ || ' HosName: ' || hosName_);
             found := 1;
         end loop;
     close c1;
