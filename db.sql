@@ -115,7 +115,6 @@ select * from MEDICAL_RECORD;
 
 -- insert into medical_record values (6, 1, 1, 1, (select sysdate from dual), 1);
 
-
 -- trigger table
 DROP TABLE RECORD_LOG
 CASCADE CONSTRAINTS;
@@ -126,4 +125,19 @@ create table RECORD_LOG (
     time date
 );
 
-@@functions/dipta/triggerRecord.sql
+@@triggerRecord.sql
+@@addPatientFromInputProc.sql
+@@addPatientFromInputToBrotiProc.sql
+@@all_patient_view.sql
+@@checkDoctorFunc.sql
+@@checkHospitalFunc.sql
+@@checkPatientFunc.sql
+@@dischargePatientProc.sql
+@@findDoctorForPatientFunc.sql
+@@findRoomForPatientFunc.sql
+@@showAvailabeRoomsProc.sql
+@@showAvailableRoomNoForHos.sql
+@@showPatientHosRoomNo.sql
+@@showPatientInfo.sql
+@@showTotalPatientUnderDocProc.sql
+@@admitPatientProc.sql

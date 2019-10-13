@@ -141,4 +141,3 @@ create table RECORD_LOG (
 @@showPatientInfo.sql
 @@showTotalPatientUnderDocProc.sql
 @@admitPatientProc.sql
-@@mergePatientProc.sql

@@ -119,6 +119,8 @@ select * from MEDICAL_RECORD;
 
 -- insert into medical_record values (6, 1, 1, 1, (select sysdate from dual), 1);
 
+
+
 -- trigger table
 DROP TABLE RECORD_LOG
 CASCADE CONSTRAINTS;
@@ -144,3 +146,5 @@ create table RECORD_LOG (
 @@showPatientHosRoomNo.sql
 @@showPatientInfo.sql
 @@showTotalPatientUnderDocProc.sql
+@@admitPatientProc.sql
+@@mergePatientProc.sql

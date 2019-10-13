@@ -1,4 +1,6 @@
-create or replace function findRoomForPatientFunc(patientId_ in MEDICAL_RECORD.PatientId%TYPE)
+-- broti
+
+create or replace function findRoomForPatient(patientId_ in MEDICAL_RECORD.PatientId%TYPE)
 	return MEDICAL_RECORD.docId%TYPE
 	is
 
@@ -7,7 +9,11 @@ create or replace function findRoomForPatientFunc(patientId_ in MEDICAL_RECORD.P
 
 begin
 
-    select count(*) into found from MEDICAL_RECORD where patientId_ = patientId;
+    select count(*) 
+    into found 
+    from MEDICAL_RECORD 
+    where patientId_ = patientId;
+
     if (found = 0) then
         return -1;
     end if;
@@ -15,5 +21,5 @@ begin
     select RoomId into RoomId_ from MEDICAL_RECORD where patientId_ = patientId;
     return RoomId_;
 
-end findRoomForPatientFunc;
+end findRoomForPatient;
 /

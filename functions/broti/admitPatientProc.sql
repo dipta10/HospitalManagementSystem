@@ -42,7 +42,7 @@ begin
     id_ := cnt + 1;
 
 
-    select max(RecordId) into cnt from MEDICAL_RECORD@broti;
+    select max(RecordId) into cnt from MEDICAL_RECORD@dipta;
     if (cnt >= id_) then
         id_ := cnt + 1;
     end if;
