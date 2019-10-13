@@ -103,8 +103,6 @@ CREATE TABLE MEDICAL_RECORD (
 /* 3 --> 'Syed Sanzam' */
 /* 4 --> 'Sabit' */
 
-/* insert into MEDICAL_RECORD values (RecordId, PatientId, DocId, RoomId); */
-
 insert into MEDICAL_RECORD values (1, 1, 1, 2, '31-may-2017', 1);
 insert into MEDICAL_RECORD values (2, 2, 2, 5, '25-sep-2019', 1);
 insert into MEDICAL_RECORD values (3, 3, 1, 9, '31-jan-2019', 1);
@@ -113,6 +111,7 @@ insert into MEDICAL_RECORD values (5, 5, 2, 1, '27-sep-2019', 0);
 
 select * from MEDICAL_RECORD;
 
+/* insert into MEDICAL_RECORD values (RecordId, PatientId, DocId, RoomId, date, discharged); */
 -- insert into medical_record values (6, 1, 1, 1, (select sysdate from dual), 1);
 
 
@@ -126,4 +125,19 @@ create table RECORD_LOG (
     time date
 );
 
-@@functions/dipta/triggerRecord.sql
+@@triggerRecord.sql
+@@addPatientFromInputProc.sql
+@@addPatientFromInputToBrotiProc.sql
+@@all_patient_view.sql
+@@checkDoctorFunc.sql
+@@checkHospitalFunc.sql
+@@checkPatientFunc.sql
+@@dischargePatientProc.sql
+@@findDoctorForPatientFunc.sql
+@@findRoomForPatientFunc.sql
+@@showAvailabeRoomsProc.sql
+@@showAvailableRoomNoForHos.sql
+@@showPatientHosRoomNo.sql
+@@showPatientInfo.sql
+@@showTotalPatientUnderDocProc.sql
+@@admitPatientProc.sql

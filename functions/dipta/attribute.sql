@@ -30,8 +30,11 @@
 
 
 /* MEDICAL RECORD TABLE */
-    recordId_ DOCTOR.RecordId%TYPE;           
-    patientId_ DOCTOR.PatientId%TYPE;                  
-    docId_ DOCTOR.DocId%TYPE;               
-    roomId_ DOCTOR.RoomId%TYPE;   
-    2 dates
+    recordId_ MEDICAL_RECORD.RecordId%TYPE;           
+    patientId_ MEDICAL_RECORD.PatientId%TYPE;                  
+    docId_ MEDICAL_RECORD.DocId%TYPE;               
+    roomId_ MEDICAL_RECORD.RoomId%TYPE;   
+    dateOfAdmission MEDICAL_RECORD.dateOfAdmission%TYPE;
+    discharged MEDICAL_RECORD.discharged%TYPE;
+
+

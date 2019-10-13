@@ -4,8 +4,7 @@ declare
     x int;
 
 begin
-
-    showAvailableRoomsProc();
+    admitPatient(1, 1, 1);
 
 end;
 /
