@@ -1,0 +1,539 @@
+<!DOCTYPE html><html><head>
+      <title>final</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/dipta10/.vscode-server/extensions/shd101wyy.markdown-preview-enhanced-0.4.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <div style="text-align: justify">
+<h3 class="mume-header" id="hospital-management-system">Hospital Management System</h3>
+
+<h4 class="mume-header" id="tables">Tables</h4>
+
+<ol>
+<li>
+<p>Patient</p>
+<table>
+<thead>
+<tr>
+<th>PatientId (PK)</th>
+<th>Name</th>
+<th>Gender</th>
+<th>Address</th>
+<th>ContactNo</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>Stores the information of a patient.</p>
+</li>
+<li>
+<p>Hospital</p>
+<table>
+<thead>
+<tr>
+<th>HosId (PK)</th>
+<th>hosName</th>
+<th>HosCity</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>Stores the information of an hospital.</p>
+</li>
+<li>
+<p>Room</p>
+<table>
+<thead>
+<tr>
+<th>RoomId (PK)</th>
+<th>RoomNo</th>
+<th>HosId (FK)</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>Stores information about all the rooms spread across all the hospitals.</p>
+</li>
+<li>
+<p>Doctor</p>
+<table>
+<thead>
+<tr>
+<th>DocId(PK)</th>
+<th>Name</th>
+<th>Qualification</th>
+<th>Salary</th>
+<th>Address</th>
+<th>ContactNo</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>Stores the information of a Doctor.</p>
+</li>
+<li>
+<p>MEDICAL_RECORD</p>
+<table>
+<thead>
+<tr>
+<th>RecordId</th>
+<th>PatientId</th>
+<th>DoctorId</th>
+<th>RoomId</th>
+<th>DateOfAdmission</th>
+<th>Discharged</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>Stores the medical history of a patient. A patient has only one entry in the patient table. But a patient might have multiple entires in the MEDICAL_RECORD table or none. The variable <code>Discharged</code> here can be <code>0</code> or <code>1</code>.<br>
+- <code>1</code> means the patient is released.<br>
+- <code>0</code> means the patient is still in the hospital.</p>
+</li>
+<li>
+<p>RECORD_LOG</p>
+<table>
+<thead>
+<tr>
+<th>RecordId</th>
+<th>newDischarge</th>
+<th>oldDischarge</th>
+<th>time</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>This is a table that stores the values of a patient being discharged. The only purpose it servers in this project is showing the usage of triggers. When a patient is discharged, or when the MEDICAL_RECORD table is updated, a new entry is inserted into the table automatically.</p>
+</li>
+</ol>
+<h4 class="mume-header" id="functions-and-procedures">Functions and procedures</h4>
+
+<ul>
+<li>
+<p><strong>Functions:</strong><br>
+Main Functions:</p>
+<ol>
+<li>addPatientFromInput: This procedure takes information of a patient and inserts it into the <code>PATIENT</code> table.</li>
+<li>findRoomForPatientFunc: Returns the room no for a patient.</li>
+<li>findDoctorForPatientFunc: Returns the doctor for a patient.</li>
+</ol>
+<p>Now we also had to create some helper functions to reduce the amount of redundant code. These following functions have been used time and time again to make the project robust.</p>
+<ol>
+<li>checkPatientFunc: Takes a patient id as input and checks all the sites. If there exists a patient with that id it return <code>1</code>, otherwise returns <code>0</code>.</li>
+<li>MergePatient: Merges patient tables from all the differnt sites.</li>
+<li>checkDoctorFunc: Takes a doctor id as input. If there exists a doctor with that id it return <code>1</code>, otherwise returns <code>0</code>.</li>
+<li>checkHospitalFunc.sql Takes a hospital id as input. If there exists a hospital with that id it return <code>1</code>, otherwise returns <code>0</code>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Procedures:</strong></p>
+<ol>
+<li>showAvailabeRooms: This procedures lists out all the available rooms spread across different branches of the hospital.</li>
+<li>showAvailableRoomNoForHos: This procedure lists out all the available rooms in a hospital given an hospital id.</li>
+<li>showPatientHosRoomNo: This procedure shows hospital and room information for a patient including all the previous records.</li>
+<li>findPatientOfAgeForHosFunc: This function takes one hospital ID &amp; an age number as input and returns the total number of patients having greater age than the given age in the given hospital.</li>
+<li>showTotalPatientUnderDoc: Task of this function is to take a doctor ID as input and returns the total number of patients that doctor has diagnosed.</li>
+<li>TotalRoomInAHospital: Takes name of the hospital returns total number of rooms in that hospital, prints nothing if no such hospital is found.</li>
+<li>admitPatientProc: This function takes information about a patient as input and inserts it into the patient table.</li>
+<li>dischargePatientProc: Discharges a patient. All it does is sets the value of discharge to <code>1</code>.</li>
+<li>addPatientFromInputToSiteOneProc: Takes information of a patient and adds a patient to another site.</li>
+<li>showPatientInfo: Shows information about a patient</li>
+</ol>
+</li>
+<li>
+<p><strong>Additional</strong>:</p>
+<ol>
+<li>all_patient_view: This view shows all the patients in all of the sites combined.</li>
+<li>triggerRecord: This trigger adds a log to the RECORD_LOG table upon update on the medical_record table.</li>
+<li>trigger pt_trig: After updating the contact no column of patient table for each row, log_updel table will store the new values of contact no, old values and the system date.</li>
+<li>trigger doc_trig: After insertion into the doctor table for each row, prints &#x201C;data  inserted!&#x201D;.</li>
+<li>trigger hos_trig: After deletion in hospital table for each row, prints &#x201C;data deleted!&#x201D;.</li>
+</ol>
+</li>
+</ul>
+<h4 class="mume-header" id="user-and-admin">User and Admin</h4>
+
+<ul>
+<li>Admin can insert and manipulate data in all of the tables. When it comes to <code>Patient</code> table, an admin have full access to the table of all the sites. It is made this way so that we can merge two patient tables from different sites. PatientId is the primary key, and is referenced from other table. So, say to be able to insert into <code>medical_history</code> table, the patientId must be present in the table, and to achieve that we have to merge.<br>
+Now for rest of the tables the data are readonly to the admins of other sites.</li>
+<li>As an user, an user can only view information about the hospital, himself, doctors and rooms available.</li>
+</ul>
+<h4 class="mume-header" id="my-contribution-and-perspective-on-the-project">My Contribution and Perspective on the project</h4>
+
+<p>This project solely focuses on the implementation of distributed database and plsql. Therefore the structure of this project is not similar to the way Hospital Management in practice should be.</p>
+<p>Along with the some main functions, I introduced the helper functions to enhance reusability. The helper functions are neatly done keeping in mind the data being distributed.</p>
+<ul>
+<li>CheckPatient</li>
+<li>CheckDoctor</li>
+<li>CheckHospital</li>
+<li>CheckRoom</li>
+</ul>
+<p>We made fragments of the <code>Patient</code> table. Therefore for the <code>CheckPatient</code> function it search all the sites.<br>
+I also made sure that now two patientId were similar. After the implementation of the <code>insertPatient</code> function tables in two sites looks like this.</p>
+<p>For Site 1:</p>
+<table>
+<thead>
+<tr>
+<th>PatientId (PK)</th>
+<th>Name</th>
+<th>Gender</th>
+<th>Address</th>
+<th>ContactNo</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>dipta</td>
+<td>Male</td>
+<td>something</td>
+<td>123</td>
+<td>23</td>
+</tr>
+<tr>
+<td>3</td>
+<td>nabil</td>
+<td>Male</td>
+<td>something</td>
+<td>123</td>
+<td>23</td>
+</tr>
+<tr>
+<td>4</td>
+<td>arnob</td>
+<td>Male</td>
+<td>something</td>
+<td>123</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<p>For Site 2:</p>
+<table>
+<thead>
+<tr>
+<th>PatientId (PK)</th>
+<th>Name</th>
+<th>Gender</th>
+<th>Address</th>
+<th>ContactNo</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Broti</td>
+<td>Female</td>
+<td>something</td>
+<td>123</td>
+<td>23</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Tonmoy</td>
+<td>Male</td>
+<td>something</td>
+<td>123</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<p>The primary key will always maintain the <strong>sequence</strong>.</p>
+<p>I created the following functions/procedures.</p>
+<ul>
+<li>addPatientFromInput: This makes sure that the primary key follows the above mentioned sequence.</li>
+<li>addPatientFromInputToSiteOneProc: I also made sure it also follow the sequence.</li>
+<li>admitPatientProc: To make this function work I had to merge two patient table. And thus I ended up creating another helper function <code>mergePatient</code> function.</li>
+<li>MergePatient: I used cursor to merge two tables. This makes the runtime slower, but makes sure there&apos;s <strong>no redundancy</strong> in the data and the data is <strong>consistent</strong>.</li>
+<li>dischargePatientProc: As there&apos;s an admit function, it means there&apos;s bound to be a procedure that releases a patient. So I added it. It uses <strong>Exception</strong>. This is the format of the function: <code>dischargePatient(patientId)</code>
+<ul>
+<li>If there&apos;s no such patient with the given <code>patientId</code> then <code>noSuchPatient</code> exception is raised.</li>
+<li>If there&apos;s no record for that patient then <code>noPreviousRecord</code> exception is raised. This is to show the</li>
+</ul>
+</li>
+<li>triggerRecord: I added the trigger mostly to show the implementation of trigger in a project and how it can help. We can find out the time during when a patient has been admitted a hospital later if we need, although it&apos;s not present in the database directly. But using this trigger we can find it out from the <code>record_trigger</code> table.</li>
+<li>all_patient_view: This is just to view all the information of all the patients out there.</li>
+<li>showAvailableRooms: I also took care of multiple sites. First I find out all the patients who are not discharged (where the value of <code>discharge</code> is 0), then just cut out all the rooms those patients are in and print the rest of the rooms.</li>
+</ul>
+<p>The troubleshooting:</p>
+<ul>
+<li>I first thought to create a main sql file and then run all the other functions through it. But it turned out that it&apos;s not possible due to plsql requiring the values of the variables during compile time. This is the <a href="https://stackoverflow.com/questions/36372563/pl-sql-accepting-input-in-if-else">StackOverflow</a> post regarding the same problem but with no solution thus far.<br>
+<img src="imgs/Screenshot_7.png" alt></li>
+<li>For the <code>rooms</code> table I could&apos;ve just used roomNo and hosId as the composite primary key. But it&apos;s not possible to reference both of them from outside the table as I can only reference one at a time, and none of these two keys uniquely identify the whole table.</li>
+</ul>
+<p>I also tweaked things here and there to make it look more practical. For example I added the constraint <code>Male</code>, <code>Female</code> for the patient gender. I also mostly tried to design the structure of the database. Although the structure of the database is not really practical, yet I feel like it has been able to demonstrate the core concept of distributed database and plsql workflow.</p>
+</div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
